@@ -21,9 +21,9 @@
 #include <map>
 #include <set>
 #include "tld.h"
-#ifdef _CHAR16T
-#define CHAR16_T
-#endif
+// #ifdef _CHAR16T
+// #define CHAR16_T
+// #endif
 #include "mex.h" 
 using namespace std;
 

@@ -15,10 +15,14 @@
 % You should have received a copy of the GNU General Public License
 % along with TLD.  If not, see <http://www.gnu.org/licenses/>.
 
-function tld = tldProcessFrame(tld,i)
+function tld = tldProcessFrame(tld,i,filename)
 
 I = tld.source.idx(i); % get current index
-tld.img{I} = img_get(tld.source,I); % grab frame from camera / load image
+if nargin < 3
+    tld.img{I} = img_get(tld.source,I); % grab frame from camera / load image
+elseif nargin == 3
+    tld.img{I} = img_alloc(filename);
+end
 
 % TRACKER  ----------------------------------------------------------------
 

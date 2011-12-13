@@ -1,0 +1,5 @@
+*.mexmaci64
+*.DS_Store
+*.map
+*.o
+*.manifest

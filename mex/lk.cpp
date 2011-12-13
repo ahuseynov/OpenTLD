@@ -19,9 +19,9 @@
 #include "highgui.h"
 #include "math.h"
 #include <limits>
-#ifdef _CHAR16T
-#define CHAR16_T
-#endif
+// #ifdef _CHAR16T
+// #define CHAR16_T
+// #endif
 #include "mex.h" 
 
 

@@ -143,9 +143,9 @@ else
     %    text(10,H-30,'Learning','color','white','backgroundcolor','k');
     %end
     
-    if tld.trackerfailure(i)==1
-        text(10,H-30,'Tracker failure','color','white','backgroundcolor','k');
-    end
+    %if tld.trackerfailure(i)==1
+    %    text(10,H-30,'Tracker failure','color','white','backgroundcolor','k');
+    %end
     
     % Draw
     if tld.plot.draw

@@ -20,8 +20,8 @@ clc; clear all; cd mex;
 
 if ispc
     disp('PC');
-    include = ' -Ic:\OpenCV2.2\include\opencv\ -Ic:\OpenCV2.2\include\';
-    libpath = 'c:\OpenCV2.2\lib\';
+    include = ' -Ic:\opencv\include\opencv\ -Ic:\opencv\build\include\';
+    libpath = 'c:\opencv\lib\';
     files = dir([libpath '*.lib']);
     
     lib = [];
@@ -36,13 +36,11 @@ if ispc
     mex -O bb_overlap.cpp
     mex -O warp.cpp
     mex -O distance.cpp
-end
-
-if ismac
+elseif ismac
     disp('Mac');
     
-    include = ' -I/opt/local/include/opencv/ -I/opt/local/include/'; 
-    libpath = '/opt/local/lib/'; 
+    include = ' -I/usr/local/include/opencv/ -I/usr/local/include/'; 
+    libpath = '/usr/local/lib/'; 
     
     files = dir([libpath 'libopencv*.dylib']);
     
@@ -58,10 +56,7 @@ if ismac
     mex -O bb_overlap.cpp
     mex -O warp.cpp
     mex -O distance.cpp
-    
-end
-
-if isunix
+else
     disp('Unix');
     
     include = ' -I/usr/local/include/opencv/ -I/usr/local/include/';
@@ -87,4 +82,3 @@ end
 
 cd ..
 disp('Compilation finished.');
-
